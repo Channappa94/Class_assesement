@@ -15,6 +15,7 @@
 		491A4AC0232040CC00FFEA06 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A4ABE232040CC00FFEA06 /* TableViewCell.swift */; };
 		491A4AC1232040CC00FFEA06 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491A4ABF232040CC00FFEA06 /* TableViewCell.xib */; };
 		491A4AC32320827300FFEA06 /* FetchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A4AC22320827300FFEA06 /* FetchingViewController.swift */; };
+		491A4AC52320B22D00FFEA06 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A4AC42320B22D00FFEA06 /* ModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		491A4ABE232040CC00FFEA06 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		491A4ABF232040CC00FFEA06 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		491A4AC22320827300FFEA06 /* FetchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingViewController.swift; sourceTree = "<group>"; };
+		491A4AC42320B22D00FFEA06 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +62,50 @@
 		491A4AAB23203FC200FFEA06 /* Class_assesement */ = {
 			isa = PBXGroup;
 			children = (
-				491A4AAC23203FC200FFEA06 /* AppDelegate.swift */,
-				491A4AAE23203FC200FFEA06 /* ViewController.swift */,
-				491A4AC22320827300FFEA06 /* FetchingViewController.swift */,
-				491A4ABE232040CC00FFEA06 /* TableViewCell.swift */,
-				491A4ABF232040CC00FFEA06 /* TableViewCell.xib */,
-				491A4AB023203FC200FFEA06 /* Main.storyboard */,
+				49FDB1EB2320BD1A005B6114 /* ViewModelFiles */,
+				49FDB1EA2320BCC1005B6114 /* ViewFiles */,
+				49FDB1E92320BC9B005B6114 /* ControllerFiles */,
+				49FDB1E82320BC5D005B6114 /* ModelFiles */,
 				491A4AB323203FC200FFEA06 /* Assets.xcassets */,
 				491A4AB523203FC200FFEA06 /* LaunchScreen.storyboard */,
 				491A4AB823203FC200FFEA06 /* Info.plist */,
 			);
 			path = Class_assesement;
+			sourceTree = "<group>";
+		};
+		49FDB1E82320BC5D005B6114 /* ModelFiles */ = {
+			isa = PBXGroup;
+			children = (
+				491A4AAC23203FC200FFEA06 /* AppDelegate.swift */,
+				491A4AC42320B22D00FFEA06 /* ModelView.swift */,
+			);
+			path = ModelFiles;
+			sourceTree = "<group>";
+		};
+		49FDB1E92320BC9B005B6114 /* ControllerFiles */ = {
+			isa = PBXGroup;
+			children = (
+				491A4AAE23203FC200FFEA06 /* ViewController.swift */,
+				491A4AC22320827300FFEA06 /* FetchingViewController.swift */,
+			);
+			path = ControllerFiles;
+			sourceTree = "<group>";
+		};
+		49FDB1EA2320BCC1005B6114 /* ViewFiles */ = {
+			isa = PBXGroup;
+			children = (
+				491A4AB023203FC200FFEA06 /* Main.storyboard */,
+			);
+			path = ViewFiles;
+			sourceTree = "<group>";
+		};
+		49FDB1EB2320BD1A005B6114 /* ViewModelFiles */ = {
+			isa = PBXGroup;
+			children = (
+				491A4ABE232040CC00FFEA06 /* TableViewCell.swift */,
+				491A4ABF232040CC00FFEA06 /* TableViewCell.xib */,
+			);
+			path = ViewModelFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +184,7 @@
 				491A4AAF23203FC200FFEA06 /* ViewController.swift in Sources */,
 				491A4AC32320827300FFEA06 /* FetchingViewController.swift in Sources */,
 				491A4AAD23203FC200FFEA06 /* AppDelegate.swift in Sources */,
+				491A4AC52320B22D00FFEA06 /* ModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
