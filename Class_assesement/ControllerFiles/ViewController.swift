@@ -10,58 +10,42 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
-    
-    var copier = FetchingViewController()
-    
-
- 
-    
-    
-    
     @IBOutlet weak var tableView: UITableView!
     let m = FetchingViewController()
-    var namesOfSinger = [String]()
-    
+    let fetch = ModelView()
+    var nameOfSinger = [String]()
+    var dateOfRelease = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return namesOfSinger.count
+        return nameOfSinger.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-
-        
-        cell.leftLabel.text = namesOfSinger[indexPath.row]
+        cell.leftLabel.text = nameOfSinger[indexPath.row]
+        cell.rightLabel.text = dateOfRelease[indexPath.row]
         return cell
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         registgerCell()
-        
-        FetchingViewController.fetchingData { (names : [String]) in
-            for i in 0...
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-        
-            DispatchQueue.main.async {
-             self.tableView?.reloadData()
-            }
-        
-        }
-        
+        allData()
     }
     
+    func allData(){
+        FetchingViewController.fetchingData { (names : ModelView) in
+            for count in 0..<names.namesOfSinger.count{
+                self.nameOfSinger.append(names.namesOfSinger[count])
+            }
+            for counts in 0..<names.datesOfSinger.count{
+                self.dateOfRelease.append(names.datesOfSinger[counts])
+            }
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
+        }
+    }
     
     func registgerCell() {
         self.tableView?.register(UINib(nibName:"TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")

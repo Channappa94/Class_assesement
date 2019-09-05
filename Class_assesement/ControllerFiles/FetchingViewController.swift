@@ -9,17 +9,17 @@
 import UIKit
 
 class FetchingViewController: UIViewController {
-
-static   var array: [String] = []
-static   var date: [String] = []
-
-
+    
+    static var array: [String] = []
+    static var date: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-static func fetchingData(completionHandler : @escaping ([String]) -> ()) {
+    static func fetchingData(completionHandler : @escaping (ModelView) -> ()) {
+        let model = ModelView()
+        
         let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/100/explicit.json")
         let task = URLSession.shared.dataTask(with: url!){ ( data, response, error) in
             if error ==  nil{
@@ -29,27 +29,23 @@ static func fetchingData(completionHandler : @escaping ([String]) -> ()) {
                         let feed = jsonResult?["feed"] as? NSDictionary
                         let results = feed?["results"] as? NSArray
                         
-                            if let count = results?.count{
-                                for n in 0...count-1{
-                                    let insideITem = results?[n] as! NSDictionary
-                                    self.array.append(insideITem["artistName"] as! String)
-                                    let blogTitle = results?[n] as! NSDictionary
-                                    self.array.append(blogTitle["releaseDate"] as! String)
-                                    print(array)
-                                }
-                                
-                                completionHandler(array)
+                        if let count = results?.count{
+                            for n in 0...count-1{
+                                let insideITem = results?[n] as! NSDictionary
+                                model.namesOfSinger.append(insideITem["artistName"] as! String)
+                                let blogTitle = results?[n] as! NSDictionary
+                                model.datesOfSinger.append(insideITem["releaseDate"] as! String)
+                            }
+                            completionHandler(model)
                         }
                     }catch{
                         print("Error")
                     }
-                    
                 }
             }
             
         }
         task.resume()
-        
     }
-
+    
 }
